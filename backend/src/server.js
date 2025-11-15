@@ -9,9 +9,9 @@ const app = express();
 app.use(clerkMiddleware()); // Apply clearkMiddleware to all routes
 
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+// app.use(express.urlencoded({ extended: false }));
 
-app.use("api/inngest", serve({ client: inngest, functions }));
+app.use("/api/inngest", serve({ client: inngest, functions }));
 
 app.get("/", (req, res) => {
   res.send("api serving!");
