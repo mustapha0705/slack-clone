@@ -5,13 +5,14 @@
   "main": "src/server.js",
   "type": "module",
   "scripts": {
-    "dev": "nodemon src/server.js",
-    "start": "node src/server.js"
+    "dev": "NODE_OPTIONS='--import ./instrument.mjs' nodemon src/server.js",
+    "start": "NODE_OPTIONS='--import ./instrument.mjs' node src/server.js"
   },
   "author": "Mustapha Mohammed",
   "license": "MIT",
   "dependencies": {
     "@clerk/express": "^1.7.49",
+    "@sentry/node": "^10.1.0",
     "cors": "^2.8.5",
     "dotenv": "^17.2.3",
     "express": "^5.1.0",
